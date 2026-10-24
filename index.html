@@ -212,6 +212,11 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--moss)}
 footer{background:var(--granite);color:var(--on-dark-muted);font-size:.88rem}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:28px}
 footer .logo{color:var(--on-dark);font-size:1.4rem}
+.checks-col{display:flex;flex-direction:column;gap:18px;min-width:0}
+.waiver-card{background:var(--granite);color:var(--on-dark);border-radius:20px;padding:22px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.waiver-card b{display:block;font-family:var(--font-display);font-size:1.6rem;text-transform:uppercase;line-height:1}
+.waiver-card span{display:block;margin-top:6px;font-size:.93rem;color:var(--on-dark-muted);max-width:40ch}
+.waiver-card .btn{font-size:1rem;padding:11px 20px}
 </style>
 
 </head>
@@ -241,10 +246,10 @@ footer .logo{color:var(--on-dark);font-size:1.4rem}
       <div>
         <p class="eyebrow" style="color:var(--moss-soft)">Agility · Speed · Movement · Mobility</p>
         <h1 style="margin-top:20px">Actions/Words<span class="soft">Great Work</span></h1>
-        <p class="lede">Custom hands-on training from a former Power Four defensive lineman, designed for athletes who want to better their skills and technique with an empahsis on mobility.</p>
+        <p class="lede">Custom hands-on training from a former Power Four defensive lineman, designed for athletes who want to better their skills and technique with an emphasis on mobility.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="#contact">Book a session</a>
-          <a class="btn btn-ghost" href="#programs">See programs</a>
+          <a class="btn btn-primary" href="#contact">Get in Touch</a>
+          <a class="btn btn-ghost" href="#programs">Training Programs</a>
         </div>
       </div>
       <figure><img class="pic" src="img/fenway-mvp.jpg" alt="Pryce Yates in UConn's #90 jersey celebrating at the 2024 Fenway Bowl"><figcaption>Fenway Bowl · Dec 2024</figcaption></figure>
@@ -292,7 +297,7 @@ footer .logo{color:var(--on-dark);font-size:1.4rem}
     <div class="wrap">
       <div class="prog-head">
         <div class="section-head" style="margin:0">
-          <p class="eyebrow">Programs</p>
+          <p class="eyebrow">Training Programs</p>
           <h2>Pick your path</h2>
           <p class="lede">Every session runs 60 or 90 minutes. Pricing and packages are coming soon. Reach out for current rates.</p>
         </div>
@@ -358,18 +363,27 @@ footer .logo{color:var(--on-dark);font-size:1.4rem}
   <section id="parents" class="parents">
     <div class="wrap">
       <div class="section-head" style="margin:0">
-        <p class="eyebrow">For parents</p>
-        <h2>Your athlete is in good hands</h2>
+        <p class="eyebrow">For parents &amp; athletes</p>
+        <h2>Safety &amp; Trust</h2>
         <p class="lede">I know what injuries can take from an athlete. Safe progressions and smart recovery come first, especially for young athletes still growing.</p>
         <figure class="parent-pic"><img class="pic" src="img/tree.jpg" alt="Pryce hugging a tree in the forest" loading="lazy"></figure>
       </div>
+      <div class="checks-col">
       <ul class="checks">
-        <li><svg><use href="#check"/></svg><div><b>Age-appropriate programming</b><span>Younger athletes focus on movement quality and bodyweight strength before heavy loads.</span></div></li>
+        <li><svg><use href="#check"/></svg><div><b>Individualized programming</b><span>Athletes receive custom programs built around their own skill and development, from tackling technique to specific pass rush work.</span></div></li>
         <li><svg><use href="#check"/></svg><div><b>Certifications <span class="todo">add yours</span></b><span>CPR/First Aid, background check and any training certifications.</span></div></li>
         <li><svg><use href="#check"/></svg><div><b>Clear communication</b><span>Updates on progress, plus a heads-up on schedule changes or weather.</span></div></li>
         <li><svg><use href="#check"/></svg><div><b>What to bring</b><span>Athletic shoes, water bottle and clothes they can move in.</span></div></li>
-        <li><svg><use href="#check"/></svg><div><b>Waiver required</b><span>A parent or guardian signs a waiver before an athlete's first session.</span></div></li>
+        <li><svg><use href="#check"/></svg><div><b>Waiver required</b><span>Every athlete signs a waiver before their first session. A parent or guardian signs for athletes under 18.</span></div></li>
       </ul>
+      <div class="waiver-card">
+        <div>
+          <b>Need the waiver?</b>
+          <span>Request a copy and I'll email it to you to review and sign before the first session.</span>
+        </div>
+        <a class="btn btn-primary" href="#contact" id="waiver-btn">Request the waiver</a>
+      </div>
+      </div>
     </div>
   </section>
 
@@ -425,6 +439,7 @@ footer .logo{color:var(--on-dark);font-size:1.4rem}
             <option>High school small group</option>
             <option>Youth athletics (middle school &amp; under)</option>
             <option>Not sure yet</option>
+            <option>Waiver request</option>
           </select></div>
         <div class="field"><label for="f-age">Athlete's age or grade</label><input id="f-age" name="age" placeholder="e.g. 10th grade"></div>
         <div class="field"><label for="f-sport">Sport</label><input id="f-sport" name="sport" placeholder="e.g. Football, linebacker"></div>
@@ -447,6 +462,12 @@ footer .logo{color:var(--on-dark);font-size:1.4rem}
 
 <script>
 const CONTACT_EMAIL = 'pryceyates21@gmail.com';
+document.getElementById('waiver-btn').addEventListener('click', function(){
+  document.getElementById('f-program').value = 'Waiver request';
+  const msg = document.getElementById('f-msg');
+  if(!msg.value.trim()) msg.value = 'Please send me the PY Training waiver to review and sign.';
+  setTimeout(function(){ document.getElementById('f-name').focus({preventScroll:true}); }, 400);
+});
 document.getElementById('contact-form').addEventListener('submit', function(e){
   e.preventDefault();
   const s = document.getElementById('form-status');
