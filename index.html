@@ -77,6 +77,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var
 .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-block:64px 120px;position:relative;z-index:1}
 .hero h1{font-size:clamp(3.6rem,10vw,7.6rem);font-weight:900}
 .hero h1 .soft{color:var(--moss-soft);display:block}
+.hero h1 .sub{font-size:.5em;margin-top:.15em;letter-spacing:.02em}
 :root[data-theme="dark"] .hero h1 .soft{color:var(--moss)}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hero h1 .soft{color:var(--moss)}}
 .hero p.lede{color:var(--on-dark-muted);margin-top:24px}
@@ -114,6 +115,7 @@ section{padding-block:88px}
   .about-photos .wide{aspect-ratio:16/10}
   .about-photos figure:nth-child(n+4){aspect-ratio:1}
 }
+.name-sub{display:block;font-size:.42em;font-weight:800;color:var(--muted);letter-spacing:.06em;margin-top:.35em}
 .about-copy{display:flex;flex-direction:column;gap:18px;min-width:0}
 .timeline{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;border-left:2px solid var(--moss)}
 .timeline li{padding:0 0 22px 22px;position:relative}
@@ -135,6 +137,10 @@ section{padding-block:88px}
 .prog li::before{content:"";position:absolute;left:0;top:.72em;width:12px;height:2px;background:var(--moss)}
 .prog .meta{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;font-size:.88rem;color:var(--muted)}
 .prog .meta b{color:var(--ink);font-weight:600}
+.prog .meta{align-items:flex-end}
+.prog .meta .price{color:var(--muted)}
+.prog .meta .price b{font-family:var(--font-display);font-size:1.35rem;font-weight:800}
+.prog .meta span:last-child{text-align:right;color:var(--ink);font-weight:600}
 @media (max-width:900px){.prog-grid{grid-template-columns:1fr}}
 
 /* Session flow */
@@ -245,8 +251,8 @@ footer .logo{color:var(--on-dark);font-size:1.4rem}
     <div class="wrap">
       <div>
         <p class="eyebrow" style="color:var(--moss-soft)">Agility · Speed · Movement · Mobility</p>
-        <h1 style="margin-top:20px">Actions/Words<span class="soft">Great Work</span></h1>
-        <p class="lede">Custom hands-on training from a former Power Four defensive lineman, designed for athletes who want to better their skills and technique with an emphasis on mobility.</p>
+        <h1 style="margin-top:20px">Great Work<span class="soft sub">Actions/Words</span></h1>
+        <p class="lede">Custom hands-on training from a former Power Four defensive lineman, designed for athletes who want to improve their skills, mobility, and technique.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#contact">Get in Touch</a>
           <a class="btn btn-ghost" href="#programs">Training Programs</a>
@@ -279,9 +285,9 @@ footer .logo{color:var(--on-dark);font-size:1.4rem}
       </div>
       <div class="about-copy">
         <p class="eyebrow">Meet your coach</p>
-        <h2>Pryce “PY” Yates</h2>
-        <p>My teammates at UConn called me PY. I grew up in San Antonio, played defensive line at Reagan High School, and spent four seasons on the Huskies' defensive front before finishing my career at outside linebacker for North Carolina.</p>
-        <p>College football taught me what real strength and explosiveness take. Stepping away from the game after injuries taught me the rest: recovery, mobility and longevity matter just as much. PY Training puts both sides together, so your athlete builds power that lasts.</p>
+        <h2>Coach PY<span class="name-sub">Pryce Yates</span></h2>
+        <p>I grew up in San Antonio, Texas and played defensive line at Reagan High School. I decided to fly up to Connecticut and attacked four seasons on the Huskies' defensive front before finishing my career at outside linebacker for North Carolina.</p>
+        <p>College football taught me the effect of extra work, the effect of consistent field work, mobility work, and recovery work. A career of pushing the boundary of nearly overworking and feeling like you could do a little more taught me how to give myself the best shot of playing at the next level.</p>
         <ol class="timeline">
           <li><span class="yr">2019–2020</span><strong>Reagan HS, San Antonio</strong>First Team All-District and All-Area. Played in the Blue-Grey All-American Bowl.</li>
           <li><span class="yr">2021–2024</span><strong>UConn Huskies, defensive line</strong>Started all 12 games in 2023 and led the team with 14 tackles for loss.</li>
@@ -299,21 +305,21 @@ footer .logo{color:var(--on-dark);font-size:1.4rem}
         <div class="section-head" style="margin:0">
           <p class="eyebrow">Training Programs</p>
           <h2>Pick your path</h2>
-          <p class="lede">Every session runs 60 or 90 minutes. Pricing and packages are coming soon. Reach out for current rates.</p>
+          <p class="lede">Training sessions run 60 or 90 minutes.</p>
         </div>
         <figure><img class="pic" src="img/archway.jpg" alt="Pryce walking through a stone archway toward a green field" loading="lazy"></figure>
       </div>
       <div class="prog-grid">
         <article class="prog">
-          <span class="tag">All ages · Adults welcome</span>
+          <span class="tag">All ages</span>
           <h3>1-on-1 Training</h3>
           <p>A plan built around one athlete: their sport, position, goals and schedule.</p>
           <ul>
-            <li>Starting assessment of strength, speed and mobility</li>
-            <li>Position-specific work for football and other sports</li>
-            <li>Off-season, in-season and pre-combine blocks</li>
+            <li>Starting assessment of skills and mobility</li>
+            <li>Position-specific work</li>
+            <li>Attention to detail on every rep</li>
           </ul>
-          <div class="meta"><span>Length</span><b>60 or 90 min</b></div>
+          <div class="meta"><span class="price"><b>$68</b> 60 min · <b>$98</b> 90 min<br>per session</span><span>1 athlete</span></div>
         </article>
         <article class="prog">
           <span class="tag">High school</span>
@@ -324,7 +330,7 @@ footer .logo{color:var(--on-dark);font-size:1.4rem}
             <li>Strength and power fundamentals</li>
             <li>Competitive drills that push each athlete</li>
           </ul>
-          <div class="meta"><span>Group size</span><b>Small, capped</b></div>
+          <div class="meta"><span class="price"><b>$38</b> 60 min · <b>$48</b> 90 min<br>per athlete</span><span>Small group</span></div>
         </article>
         <article class="prog">
           <span class="tag">Middle school &amp; under</span>
@@ -335,7 +341,7 @@ footer .logo{color:var(--on-dark);font-size:1.4rem}
             <li>Agility, balance and body control games</li>
             <li>Good habits for warm-ups, recovery and effort</li>
           </ul>
-          <div class="meta"><span>Group size</span><b>Larger groups</b></div>
+          <div class="meta"><span class="price"><b>$25</b> 60 min · <b>$30</b> 90 min<br>per athlete</span><span>Larger groups</span></div>
         </article>
       </div>
     </div>
@@ -410,7 +416,7 @@ footer .logo{color:var(--on-dark);font-size:1.4rem}
         <details><summary>Do I need to play football to train with you?</summary><p>No. Strength, speed and mobility help every sport. I train football players, basketball and soccer players, track athletes and adults who want to move better.</p></details>
         <details><summary>Should my athlete do 60 or 90 minutes?</summary><p>Younger athletes and first-timers usually start with 60 minutes. 90-minute sessions suit high school and older athletes who want extra strength and sport-specific work.</p></details>
         <details><summary>Is strength training safe for middle schoolers?</summary><p>Yes, when it's coached and age-appropriate. Youth groups focus on bodyweight strength, coordination and good movement before any heavy loading.</p></details>
-        <details><summary>How much does it cost?</summary><p>Pricing and session packages are coming soon. Send a message through the form below and I'll share current rates.</p></details>
+        <details><summary>How much does it cost?</summary><p>1-on-1 training is $68 for 60 minutes or $98 for 90 minutes. Small group sessions are $38 or $48 per athlete, and larger group sessions are $25 or $30 per athlete.</p></details>
         <details><summary>What's your cancellation policy?</summary><p>Policy details are coming soon.</p></details>
       </div>
     </div>
